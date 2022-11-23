@@ -1,0 +1,38 @@
+#include <iostream>
+#include<cstdlib>
+#include<ctime>
+
+
+using namespace std;
+int main() {
+  int m=6, n=4;
+  int elements[n];
+  int array[m][n];
+
+  srand(time(NULL));
+  for(int i=0;i<n;i++)
+    elements[i] = 0;
+  
+  for(int i=0;i<m;i++)
+    for(int j=0;j<n;j++)
+      array[i][j]= rand()%10;
+    
+  
+  for(int i=0;i<m;i++){
+    for(int j=0;j<n;j++){
+      cout << array[i][j];
+        cout << array[i][j] << " ";
+      
+    }
+  cout<<endl;
+  }
+  
+  for(int i=0;i<m;i++)
+    for(int j=0;j<n;j++)
+      if(array[i][j]%2==0)
+        elements[j]++;
+      
+  for(int j=0;j<n;j++){
+    cout << "In " << j+1 << " column of even elements = " << elements[j] << endl;
+  }
+}
